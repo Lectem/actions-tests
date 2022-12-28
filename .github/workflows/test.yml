@@ -27,7 +27,7 @@ jobs:
 
       - name: Add VC++ to PATH
         uses: Lectem/vswhere@v1.0
-        with: { file: vsdevcmd.bat }
+        with: { file: '**vsdevcmd.bat' }
 
       # Prints found CL.exe version info
 
