@@ -33,5 +33,5 @@ jobs:
 
       - name: Build app for release
         run: |
-          vsdevcmd  -arch=x64 -host_arch=x64
-          cl.exe
+          VsDevCmd.bat.bat -arch=x64 -host_arch=x64
+          CL.exe
