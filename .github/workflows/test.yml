@@ -32,6 +32,7 @@ jobs:
       # Prints found CL.exe version info
 
       - name: Build app for release
+        shell: cmd
         run: |
           VsDevCmd.bat -arch=x64 -host_arch=x64
           CL.exe
