@@ -25,15 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Add VC++ to PATH
+      - name: Add clang-tidy to PATH
         uses: Lectem/vswhere@v1.0
-        with: { file: 'Common7\Tools\VsDevCmd.bat' }
+        with: 
+          file: 'VC\Tools\Llvm\bin\clang-tidy.exe'        
 
-      # Prints found CL.exe version info
-
-      - name: Build app for release
-        shell: cmd
-        run: |
-          VsDevCmd.bat -arch=x64 -host_arch=x64
-          CL.exe
-          DIR
+      - name: Prints found clang-tidy.exe version info
+        run: clang-tidy --version
